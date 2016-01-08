@@ -1,0 +1,258 @@
+@charset "UTF-8";   /* Definição do tipo de caractere. No caso PT-BR, utilizamos UTF-8 */
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web); /* Importando fontes de repositorio do Google */
+@font-face {    /* Importar fontes externas para o documento. */
+    font-family: 'FonteLogo' ;
+    src: url("../_fonts/bubblegum-sans-regular.otf");
+}
+
+/* -------------- INICIO DOS COMANDOS ------------*/
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #DDD;
+    color: rgba(0,0,0,1);
+}
+
+/* ---------------- Formatação da DIV principal ----------------- */
+
+div#interface {
+    width: 900px;
+    background-color: #FFF;
+    margin: -20px auto 0px auto; /* Margem superior colada na tela, lados automaticos e margem de 0px abaixo. Utilizado para centralizar o conteúdo */
+    box-shadow: 0px 0px 10px rgba(0,0,0,.5);    /* Utilizado para criar uma sombra discreta na DIV. 0px de deslocamento vertical e lateral, 10px de espalhamento. */
+    padding: 10px;
+}
+
+/* ----------------- Fim da Formatação da DIV principal ---------*/
+p {
+    text-align: justify;
+    text-indent: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: #606060;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+/* ------------------- FORMATAÇÃO DE CABEÇALHO HEADER E SEUS ELEMENTOS MANEE -------------------- */
+
+header#cabecalho img#icone {
+    position: absolute;
+    left: 780px;
+    top: 70px;
+}
+
+header#cabecalho{
+    border-bottom: 1px #606060 solid;   /* Borda de baixo do container header com exp de 1px, cinza e exp solida */
+    height: 150px;
+    background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 80px;    /* Configuração de fundo. Neste caso, estou chamando uma imagem e deixando sem repetições. Comando utilizado para definir a LOGO. Deslocamento vertical de 80px e hor. 0px.*/
+
+}
+
+header#cabecalho h1 {
+    font-family: 'FonteLogo', sans-serif;   /* Fonte externa importada. */
+    font-size: 30pt;    /* 30 pontos de tamanho */
+    color: #606060;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.6);    /* Sombra discreta do título. */
+    padding: 0px;
+    margin-bottom: 0px; /* Comfiguração da margem de baixo do h1 */
+}
+
+header#cabecalho h2 {
+    font-family: 'Titillium Web', sans-serif;   /* Utilizando Fonte importada de repositório do Google. */
+    font-size: 15pt;
+    color: #888;
+    padding: 0px;
+    margin-top: 0px;    /* Configuração da margem superior do elemnto h2 dentro do cabecalho */
+}
+
+/* ------------ 1 Formatação de imagens com legenda. -------------------- */
+
+figure.fotolegenda {   /* 1 1 Para formatar uma classe CSS, deve definir a TAG.CLASSE */
+    border: 8px solid white;   /* Borda branca com 8px; */
+    box-shadow: 1px 1px 4px black; /* Sombra da caixa */
+    position: relative; /* 1 2  Indica que este elemento ficará nesta posição, onde foi definida no codigo. */
+}
+
+figure.fotolegenda img {   /* 1 3 Apos acessar a TAG Figure com Classe fotolegenda, acessamos a TAG IMG, que esta abaixo. */
+    width: 100%;
+    height: 100%;
+}
+figure.fotolegenda figcaption { /* 1 4 Legenda da imagemm. */
+    opacity: 0; /* Nada sera mostrado */
+    position: absolute; /* O elemento terá posição absoluta dentro do elemento pai, que no caso é figcaption.fotolegenda  */
+    top: 0px;
+    background-color: rgba(0,0,0,.4);
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 10px; /* cria um espaço de 10px dentro do elemento. */
+    box-sizing: border-box; /* Criado para resolver problema do padding. Cria uma box dentro do elemento. Foi definido para acompanhar borda. */
+    transition: opacity 1s; /* Define trasição de opacidade de 1 segundo no elemento */
+}
+
+figure.fotolegenda:hover figcaption { /* Ao passar o mouse em cima do elemento figure.fotolegenda, sera executado os seguinte comandos com figcaption.  */
+    opacity: 1; /* Comando executado quando usuário passar o mouse sobre o elemento. */
+}
+
+
+/* --------------- Formatação do MENU principal --------------- */
+
+
+nav#menu {
+    display: block; /* O elemento foi definido como bloco. Blocos podem flutuar pela tela. */
+}
+
+nav#menu ul {  /* Tag NAV com ID MENU e tudo que for UL */
+    list-style: none;   /* Estilo dos marcadores, nesse caso, sem estilos, ou nenhum. */
+    text-transform: uppercase;  /* Todas as letras em maiúsculo. */
+    position: absolute; /* Permite posicionar este elemento sobre outro elemento em qualquer lugar da tela. */
+    top: -20px;
+    left: 300px;
+}
+
+nav#menu li {   /* LI (Item de lista) detro da TAG NAV com ID MENU. */
+    display: inline-block;  /* Mostra os blocos na mesma linha. */
+    background-color: #DDD;
+    padding: 10px; /* Espaçamento interno. Neste caso, foi usado para aumentar o tamenho do botão do Menu principal. */
+    margin: 2px;    /* Espaçamento externo. Neste caso, foi usado para aumentar o espaço ENTRE botões do Menu principal. */
+    -webkit-transition: background-color 1s;
+    -moz-transition: background-color 1s;
+    -ms-transition: background-color 1s;
+    -o-transition: background-color 1s;
+    transition: background-color 1s;    /* Transição de cor de plano de fundo no elemento. Este comando não pode ser inserido no elemento com parametro HEVER.  */
+
+}
+
+nav#menu li:hover { /* Definir uma ação ao passar o mouse sobre o elemento. */
+    background-color: darkgray;
+}
+
+nav#menu h1 {
+    display: none;  /* Não mostra o H1 do menu. */
+}
+
+nav#menu a {    /* Links (TAGS a) dentro da TAG NAV ID MENU. Editando Links do Menu Principal. */
+    color: black;   /* Cor do texto. Cor do Link do Menu Principal */
+    text-decoration: none; /* Decoração do texto, neste caso, nenhuma. Utilizado aqui para retirar o sublinhado dos links. */
+}
+
+nav#menu a:hover {  /* Links da Tag NAV ID Menu, executa as seguintes transformações ao passar o mouse */
+    color: white;
+    text-decoration: underline; /* Sublinhado */
+}
+
+section#corpo {
+    display: block; /* Elemento transformado em bloco */
+    width: 500px;   /*Tamanho da section */
+    float: left;    /* Lado que irá flutuar. Objetos devem estar configurados em blocos. */
+    border-right: 1px solid #606060;    /* Configuração da borda da direita do elemento */
+    padding-right: 15px;
+}
+
+article#noticia-principal h2 {
+    font-size: 12pt;
+    color: #606060;
+    background-color: #DDD;
+    padding: 5px 0px 5px 10px;
+    margin: 10px;
+    margin: 10px 0px 10px 0px;
+}
+
+header#cabecalho-noticia h1 {
+    font-family: 'FonteLogo', sans-serif;
+    color: #606060;
+    font-size: 20pt;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+header#cabecalho-noticia h2 {
+    font-size: 13pt;
+    color: #cecece;
+    background-color: white;
+    margin: 0px;
+}
+
+header#cabecalho-noticia h3 {
+    font-size: 12pt;
+    color: #606060;
+}
+
+.direita {  /* Classe genérica. Formatar tudo que for de classe .direita. */
+    text-align: right;  /* Alinhamento do Texto. Right */
+}
+
+table#tablespec {
+    border: 1px solid #606060;
+    border-spacing: 0px;    /* Espaçamento entre as bordas da tabela */
+    margin: 0px auto 0px auto;  /* Centralizar tabela na section */
+}
+
+table#tablespec td {
+    border: 1px solid #606060;
+    padding: 10px;  /* Espaçamento interno na célula */
+    text-align: center; /* Alinhamento do texto ao centro */
+    vertical-align: middle; /* Alinhamento vertical (cima-baixo) ao meio */
+}
+
+table#tablespec td.ce {
+    color: #FFF;
+    background-color: #606060;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+table#tablespec td.cd {
+    background-color: #cecece;
+}
+
+table#tablespec caption {
+    color: #888;
+    font-size: 13pt;
+    font-weight: bolder;
+}
+
+table#tablespec caption span {
+    display: block; /* Mes e ano será um elemento flutuante. Não fará parte do texto. */
+    font-size: 8pt;
+    float: right;   /* Direção que o mes e o ano vai flutuar. Disponivel com o par. display:block; */
+    color: #000;
+    margin-top: 10px;
+}
+
+
+aside#lateral {
+    display: block;
+    width: 350px;
+    float: right;
+    background-color: #DDD;
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+}
+
+aside#lateral h1{
+    font-family: 'FonteLogo', sans-serif;
+    font-size: 20pt;
+    color: #606060;
+}
+
+aside#lateral h2 {
+    background-color: #606060;
+    font-size: 13pt;
+    color: #FFF;
+    padding: 5px;
+}
+
+footer#rodape {
+    clear: both;    /* Limpar elementos dos dois lados do elemento. */
+    border-top: 1px solid #606060;  /* Configuração da borda do topo do elemento */
+}
+
+footer#rodape p {
+    text-align: center; /* texto centralizado no footer */
+}

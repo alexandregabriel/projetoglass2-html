@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            // function acendeLampada() {  //
+            //   alert("Lampanda Acendeu!");//  Comando para alerta na tela.
+            // } //
+            //function acendeLampada() {
+                //document.getElementById("luz").src = "_imagens/lampada-acesa.jpg";
+          //  }
+            
+           // function apagaLampada() {
+              //  document.getElementById("luz").src = "_imagens/lampada-apagada.jpg";
+          //  }
+            
+           // function quebraLamp() {
+          //      document.getElementById("luz").src = "_imagens/lampada-quebrada.jpg";
+          //  }
+         // var quebrada=false;
+         // function mexeLampada(tipo) {  //Parametro Tipo, tratado como variaveis. Variável objeto, so funciona nessa função.
+         //     if (tipo == 1) {
+        //          arquivo = "_imagens/lampada-quebrada.jpg";
+        //      }
+         //     if (tipo == 2) {
+        //          arquivo = "_imagens/lampada-acesa.jpg";
+        //      }
+        //      if (tipo == 3) {
+        //          arquivo = "_imagens/lampada-apagada.jpg";
+         //     }
+        //      if (quebrada == false) {
+         //         document.getElementById("luz").src = arquivo;
+         //         if (tipo == 1) {
+         //             quebrada = true;
+        //          }
+        //      }
+        //          
+        //  }
+        var quebrada=false;
+        function mexeLampada(tipo) {
+            if (!quebrada) {
+                document.getElementById("luz").src = "_imagens/" + tipo + ".jpg";
+            }
+            if (tipo == 'lampada-quebrada') {
+                quebrada = true;
+            }
+        }
+
+        </script>
+    </head>
+    <body>
+        <h1>Testando JavaScript</h1>
+        <img src="_imagens/lampada-apagada.jpg" id="luz" onclick="mexeLampada('lampada-quebrada')" onmouseover="mexeLampada('lampada-acesa')" onmouseout="mexeLampada('lampada-apagada')" />
+    </body>
+</html>
